@@ -172,7 +172,7 @@ void printWelcomeMessage()
     printf("\n");
     printf("--------------------\n");
     printf("|    CREATORS:     |\n");
-    printf("|   Apporv Gupta   |\n");
+    printf("|   Apoorv Gupta   |\n");
     printf("|  Vishesh Dvivedi |\n");
     printf("--------------------\n");
     printf("\n");
