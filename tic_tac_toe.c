@@ -1,3 +1,11 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 #include <stdio.h>
 
 char square[3][3] = {
@@ -17,7 +25,6 @@ int main()
     char mark;
     do
     {
-        system("clear");
         printWelcomeMessage();
         chessboard();
         player = (player % 2) ? 1 : 2;
@@ -26,7 +33,8 @@ int main()
         scanf("%d", &choice);
 
         mark = (player == 1) ? 'X' : 'O';
-
+        if (choice >0 && choice <=9)
+        {
         if (choice == 1 && square[0][0] == '1')
             square[0][0] = mark;
             
@@ -56,10 +64,18 @@ int main()
             
         else
         {
-            printf("Invalid move \n");
+            printf("Wait for a while, Invalid move \n");
             sleep(2);
             player--;
          
+        }
+            
+        }
+        else
+        {
+            printf("Wait for a while, Invalid move \n");
+            sleep(2);
+            player--;
         }
         i = check();
 
@@ -78,7 +94,6 @@ int main()
 }
 
 /*********************************************
-
 FUNCTION TO RETURN GAME STATUS
 1 FOR GAME IS OVER WITH RESULT
 -1 FOR GAME IS IN PROGRESS
