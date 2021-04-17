@@ -17,6 +17,7 @@ int main()
     char mark;
     do
     {
+        system("clear");
         printWelcomeMessage();
         chessboard();
         player = (player % 2) ? 1 : 2;
