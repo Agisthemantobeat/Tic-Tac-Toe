@@ -20,8 +20,8 @@ void printWelcomeMessage();
 
 int main()
 {
-    int player = 1, i, choice;
-
+    int player = 1, i, choice_int;
+    char choice[100];
     char mark;
     do
     {
@@ -30,36 +30,37 @@ int main()
         player = (player % 2) ? 1 : 2;
 
         printf("Player %d, enter a number:  ", player);
-        scanf("%d", &choice);
+        gets(choice);
+        choice_int = atoi(choice);
 
         mark = (player == 1) ? 'X' : 'O';
-        if (choice >0 && choice <=9)
+        if (choice_int >0 && choice_int <=9)
         {
-        if (choice == 1 && square[0][0] == '1')
+        if (choice_int == 1 && square[0][0] == '1')
             square[0][0] = mark;
             
-        else if (choice == 2 && square[0][1] == '2')
+        else if (choice_int == 2 && square[0][1] == '2')
             square[0][1] = mark;
             
-        else if (choice == 3 && square[0][2] == '3')
+        else if (choice_int == 3 && square[0][2] == '3')
             square[0][2] = mark;
             
-        else if (choice == 4 && square[1][0] == '4')
+        else if (choice_int == 4 && square[1][0] == '4')
             square[1][0] = mark;
             
-        else if (choice == 5 && square[1][1] == '5')
+        else if (choice_int == 5 && square[1][1] == '5')
             square[1][1] = mark;
             
-        else if (choice == 6 && square[1][2] == '6')
+        else if (choice_int == 6 && square[1][2] == '6')
             square[1][2] = mark;
             
-        else if (choice == 7 && square[2][0] == '7')
+        else if (choice_int == 7 && square[2][0] == '7')
             square[2][0] = mark;
             
-        else if (choice == 8 && square[2][1] == '8')
+        else if (choice_int == 8 && square[2][1] == '8')
             square[2][1] = mark;
             
-        else if (choice == 9 && square[2][2] == '9')
+        else if (choice_int == 9 && square[2][2] == '9')
             square[2][2] = mark;
             
         else
