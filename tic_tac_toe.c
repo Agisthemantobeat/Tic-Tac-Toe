@@ -1,11 +1,3 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 
 char square[3][3] = {
@@ -22,7 +14,7 @@ int main()
 {
     int player = 1, i, choice_int;
     char choice[100];
-    char mark;
+    char mark,mark1='X',mark2='0';
     do
     {
         printWelcomeMessage();
@@ -65,7 +57,7 @@ int main()
             
         else
         {
-            printf("Wait for a while, Invalid move \n");
+            printf("Wait for a while, Invalid move - Already occupied \n");
             sleep(2);
             player--;
          
