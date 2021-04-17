@@ -59,7 +59,7 @@ int main()
         else
         {
             printf("Wait for a while, Invalid move - Already occupied \n");
-            sleep(2);
+            sleep(200);
             player--;
          
         }
@@ -68,7 +68,7 @@ int main()
         else
         {
             printf("Wait for a while, Invalid move \n");
-            sleep(2);
+            sleep(200);
             player--;
         }
         i = check();
@@ -76,17 +76,16 @@ int main()
         player++;
     }while (i ==  - 1);
     
+    system("clear");
+    printWelcomeMessage();
     chessboard();
     
     if (i == 1)
-        printf("==>\aPlayer %d win ", --player);
+        printf("===== Congratulations !!! \aPlayer %d wins !!! ===== ", --player);
     else
-        printf("==>\aGame draw");
+        printf("===== Unfortunate Draw ! \aBetter Luck Next Time =====");
   
     return 0;
-
-
-
 }
 
 /*********************************************
