@@ -14,7 +14,7 @@ int main()
 {
     int player = 1, i, choice_int;
     char choice[100];
-    char mark,mark1='X',mark2='0';
+    char mark;
     do
     {
         printWelcomeMessage();
