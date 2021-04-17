@@ -81,6 +81,8 @@ int main()
         printf("==>\aPlayer %d win ", --player);
     else
         printf("==>\aGame draw");
+  
+    return 0;
 
 
 
