@@ -59,7 +59,7 @@ int main()
         else
         {
             printf("Wait for a while, Invalid move - Already occupied \n");
-            sleep(200);
+            sleep(2);
             player--;
          
         }
@@ -68,7 +68,7 @@ int main()
         else
         {
             printf("Wait for a while, Invalid move \n");
-            sleep(200);
+            sleep(2);
             player--;
         }
         i = check();
