@@ -71,22 +71,22 @@ Required parameters:
 */
 void insertNode(int position, char character)
 {
-    struct node *new_node = NULL;
-    new_node = (struct node*)malloc(sizeof(struct node));
+    struct node *current_node = NULL;
+    current_node = (struct node*)malloc(sizeof(struct node));
     
-    if(new_node == NULL)
+    if(current_node == NULL)
     {
         printf("\n[ERROR] Memory cannot be allocated.\n");
         exit(0);
     }
     else
     {
-        new_node->position = position;
-        new_node->character = character;
-        new_node->next = NULL;
+        current_node->position = position;
+        current_node->character = character;
+        current_node->next = NULL;
         
-        prev_node->next = new_node;
-        prev_node = new_node;
+        prev_node->next = current_node;
+        prev_node = current_node;
     }
 }
 
