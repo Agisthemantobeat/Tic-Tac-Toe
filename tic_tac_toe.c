@@ -2,11 +2,11 @@
 START OF PROJECT
 ********************************************************************/
 
-// Including header files
+// Defining preprocessor directives
 #include <stdio.h>
 #include <stdlib.h>
 
-// Defining preprocessor directives
+// Defining Constants
 #define X 'X'
 #define O '0'
 #define WAIT 4
