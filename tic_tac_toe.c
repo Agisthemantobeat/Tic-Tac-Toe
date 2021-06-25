@@ -12,10 +12,12 @@ START OF PROJECT
 #define WAIT 4
 
 /*
+
 Creating node structure which stores the following values:
 [int] position:      which stores the position of the character within the board.
 [char] character:    which stores the character placed within the block inside the board.
 [struct] node *next: pointer that stores the address of the next node.
+
 */
 struct node
 {
@@ -48,12 +50,15 @@ void printWelcomeMessage()
     printf("|  Vishesh Dvivedi |\n");
     printf("--------------------\n");
     printf("\n");
-    
 }
 
 /* 
+
 This function is used to append node to the linked list
+
 Required parameters:
+[int] position:   The value of position to be stored within the new node
+[char] character: The character value to be stored within the new node
 
 */
 void insertNode(int position, char character)
@@ -76,6 +81,11 @@ void insertNode(int position, char character)
     }
 }
 
+/*
+
+This function is used to create the linked list which stores the value of board
+
+*/
 void createBoard()
 {
     start = (struct node*)malloc(sizeof(struct node));
@@ -97,6 +107,17 @@ void createBoard()
     }
 }
 
+/*
+
+This function is used to check if a certain position within the board is empty or not_eq
+
+Required parameters:
+[int] position: The position within the board to be checked.
+
+Return:
+[int] : Returns 1 if position is not occupied, else 0
+
+*/
 int checkPosition(int position)
 {
     struct node *current_node = start;
@@ -119,6 +140,15 @@ int checkPosition(int position)
     }
 }
 
+/*
+
+This function is used to insert a character at a certain position within the board.
+
+Required parameters:
+[int] position: The position to store the character within the board.
+[char] character: The character to insert at the position.
+
+*/
 void insertCharacterAtPosition(int position, char character)
 {
     struct node *current_node = start;
@@ -132,6 +162,14 @@ void insertCharacterAtPosition(int position, char character)
     }
 }
 
+/*
+
+This function is used to check whether any user has won the game or not.
+
+Return:
+[int] : Returns 1 if any user wins, else 0 if no user won.
+
+*/
 int checkWin()
 {
     struct node *current_node = start;
@@ -174,6 +212,11 @@ int checkWin()
     return 0;
 }
 
+/*
+
+This function is used to display the welcome message along with the game board.
+
+*/
 void display()
 {
     printWelcomeMessage();
@@ -220,6 +263,11 @@ void display()
     }
 }
 
+/*
+
+Main function of the script.
+
+*/
 void main()
 {
     int counter = 0, position=0, num=0;
