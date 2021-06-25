@@ -68,7 +68,8 @@ void insertNode(int position, char character)
     
     if(new_node == NULL)
     {
-        printf("Memory cannot be assigned");
+        printf("\n[ERROR] Memory cannot be allocated.\n");
+        exit(0);
     }
     else
     {
@@ -91,7 +92,8 @@ void createBoard()
     start = (struct node*)malloc(sizeof(struct node));
     if(start == NULL)
     {
-        printf("Memory cannot be allocated");
+        printf("\n[ERROR] Memory cannot be allocated.\n");
+        exit(0);
     }
     else
     {
