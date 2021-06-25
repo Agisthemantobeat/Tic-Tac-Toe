@@ -1,3 +1,11 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 /*******************************************************************
 START OF PROJECT
 ********************************************************************/
@@ -27,8 +35,8 @@ struct node
     
 }*start = NULL;
 
-// Declaring and Initlalizing current_node which is used while creating the linked list
-struct node *current_node = NULL;
+// Declaring and Initlalizing prev_node which is used while creating the linked list
+struct node *prev_node = NULL;
 
 // This function clears the console screen and prints the ASCII art of this script
 void printWelcomeMessage()
@@ -77,8 +85,8 @@ void insertNode(int position, char character)
         new_node->character = character;
         new_node->next = NULL;
         
-        current_node->next = new_node;
-        current_node = new_node;
+        prev_node->next = new_node;
+        prev_node = new_node;
     }
 }
 
@@ -100,7 +108,7 @@ void createBoard()
         start->position = 1;
         start->character = '1';
         start->next = NULL;
-        current_node = start;
+        prev_node = start;
     }
     
     for (int i=2; i<10; i++)
@@ -122,12 +130,12 @@ Return:
 */
 int checkPosition(int position)
 {
-    struct node *current_node = start;
-    while (current_node!= NULL)
+    struct node *prev_node = start;
+    while (prev_node!= NULL)
     {
-        if(current_node->position == position)
+        if(prev_node->position == position)
         {
-            if ((current_node->character==X) || (current_node->character==O))
+            if ((prev_node->character==X) || (prev_node->character==O))
             {
                 printf("\n[ERROR] Position %d is already occupied. Please choose another position.\n\n", position);
                 sleep(WAIT);
@@ -138,7 +146,7 @@ int checkPosition(int position)
                 return 1;
             }
         }
-        current_node = current_node->next;
+        prev_node = prev_node->next;
     }
 }
 
@@ -153,14 +161,14 @@ Required parameters:
 */
 void insertCharacterAtPosition(int position, char character)
 {
-    struct node *current_node = start;
-    while (current_node!= NULL)
+    struct node *prev_node = start;
+    while (prev_node!= NULL)
     {
-        if(current_node->position == position)
+        if(prev_node->position == position)
         {
-            current_node->character = character;
+            prev_node->character = character;
         }
-        current_node = current_node->next;
+        prev_node = prev_node->next;
     }
 }
 
@@ -174,13 +182,13 @@ Return:
 */
 int checkWin()
 {
-    struct node *current_node = start;
+    struct node *prev_node = start;
     char charList[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     
     for(int i=0; i<9; i++)
     {
-        charList[i] = current_node->character;
-        current_node = current_node->next;
+        charList[i] = prev_node->character;
+        prev_node = prev_node->next;
     }
     
     // Checking for horizontal victory
@@ -222,7 +230,7 @@ This function is used to display the welcome message along with the game board.
 void display()
 {
     printWelcomeMessage();
-    struct node *current_node;
+    struct node *prev_node;
     if(start == NULL)
     {
         printf("The list is empty");
@@ -230,9 +238,9 @@ void display()
     else
     {
         int counter=0;
-        current_node = start;
+        prev_node = start;
         printf("\n");
-        while(current_node!=NULL)
+        while(prev_node!=NULL)
         {
             for (int i=0; i<3; i++)
             {
@@ -241,14 +249,14 @@ void display()
                 {
                     if (j != 2)
                     {
-                        printf("  %c  |", current_node->character);
-                        current_node = current_node->next;
+                        printf("  %c  |", prev_node->character);
+                        prev_node = prev_node->next;
                         counter ++;
                     }
                     else
                     {
-                        printf("  %c  ", current_node->character);
-                        current_node = current_node->next;
+                        printf("  %c  ", prev_node->character);
+                        prev_node = prev_node->next;
                         counter++;
                     }
                 }
