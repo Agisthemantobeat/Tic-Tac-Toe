@@ -1,3 +1,7 @@
+/*******************************************************************
+START OF PROJECT
+********************************************************************/
+
 // Defining preprocessor directives
 #include <stdio.h>
 #include <stdlib.h>
